@@ -8,7 +8,7 @@ score = {'Player': 0, 'Computer': 0}
 def take_and_translate():
     while True:
         text = input("""
-Enter your move (rosk, scissors, paper, or r, s, p) to move,
+Enter your move (rock, scissors, paper, or r, s, p) to move,
 type 'exit' to quit, type 'new' to start new game
 """)
         if text.upper() in ('ROCK', 'R'):
@@ -40,7 +40,7 @@ def play(player_move):
     print(player_move, 'vs', pc_move)
     if d_items[player_move] == d_items[pc_move]:
         print("It's a draw!")
-    elif d_items[player_move] - d_items[pc_move] == -1:
+    elif d_items[player_move] - d_items[pc_move] in (-1, 2):
         print('You won!!!')
         score['Player'] += 1
     else:
